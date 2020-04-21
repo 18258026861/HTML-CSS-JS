@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- form表单
+    action 表单提交到何处
+    method：使用什么方式，GET POST
+    Get是不安全的，数据被放在请求的URL中,但是效率高；Post的所有操作不可见。
+    Get传送的数据量较小，因为受URL长度限制；Post传送的数据量较大，一般被默认为不受限制-->
+<form action="iframe内联框架.html" method="post">
+<!--    name 表单名称 value：初始值 checked：type为radio或checkbox时代表是否被选中-->
+  <p> 用户名  <input type="text" name="un"></p>
+  <p>密码<input type="password" name="psw"></p>
+    <p><input type="submit" value="提交">
+        <input type="reset"value="重置"> </p>
+
+    <p>性别
+        <input type="radio" value="man" name="sex" checked>男
+        <input type="radio" value="woman" name="sex">女
+    </p>
+
+    <p>多选框
+    <input type="checkbox" value="sleep" name="checkbox">睡觉
+    <input type="checkbox" value="eat" name="checkbox">吃 </p>
+
+    <p>按钮
+<!--        button按钮需要使用js添加动作-->
+        <input type="button" value="点击变长">
+<!--        图片也可以成为按钮-->
+<!--        <input type="image" src="static/1.png">-->
+    </p>
+
+    <p>
+        下拉框
+        <select name="listname">
+            <option value="zg">zg</option>
+            <option value="mg" selected>mg</option>
+        </select>
+    </p>
+    <p>
+        文本域
+        <textarea name="text" cols="60" rows="10">texxt</textarea>
+    </p>
+    <p>
+        文件域
+        <input type="file" name="file">
+        <input type="button" value="上传">
+    </p>
+
+    <p>
+        数字：
+        <input type="number" name="num" min="2" max="20" step="1">
+    </p>
+    <p>
+        滑块:
+        <input type="range" name="voice" min="0" max="10">
+    </p>
+    <p>
+        搜索框:
+        <input type="search" name="search">
+    </p>
+
+</form>
+
+</body>
+</html>
