@@ -1,0 +1,15 @@
+#idea参忽略文件
+# Project exclude paths
+*.class
+*.log
+*.lock
+*.jar
+*.war
+*.ear
+
+/out/
+target/
+tep/
+#idea
+.idea/
+*.impl
