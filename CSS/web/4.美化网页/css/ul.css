@@ -1,0 +1,35 @@
+/*将标题和列表放在一个div容器中*/
+#nav{
+    width: 300px;
+    background: #e44ce3;
+    line-height: 50px;
+}
+h1{
+    font-size: medium;
+    font-weight: bolder;
+    text-indent: 2em;
+    line-height: 60px;
+    background: chocolate;
+}
+/*发现标题和列表中间有一条白色，就在div中也设置背景颜色，那么就可以去掉ul的背景颜色了*/
+ul{
+    /*background: #e44ce3;*/
+}
+
+ul li{
+    margin-block: 20px;
+    /*去掉列表前面的小圆点*/
+    list-style: none;
+    /*添加小箭头*/
+    background: url("../img/arrow.png") 200px 10px;
+    background-repeat: no-repeat;
+    /*位置可以直接在url后面加，也可以position设置*/
+    /*background-position: 200px 10px;*/
+}
+a:hover{
+    color: red;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
