@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style>
+
+        .demo a{
+            float: left;
+            display: block;
+            height: 50px;
+            width:50px;
+            border-radius: 10px;
+            text-align: center;
+            background: lemonchiffon;
+            text-decoration: none;
+            font: bold 20px/50px Arial;
+            margin-right: 5px;
+        }
+
+        /*存在xx属性的元素     a[xx]
+            a[id] a标签中存在id属性的元素*/
+        a[id]{
+            background: yellow;
+        }
+        /*a[id=]选中id= 的元素*/
+        a[id=a2]{
+            background: black;
+        }
+        /*选中class中含有t的元素*/
+        a[class*="t"]{
+            background: blue;
+        }
+        /*选中href中以id开头的元素*/
+        a[href^=id]{
+            background: white;
+        }
+        /*选中以html结尾的元素*/
+        a[href$=ml]{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<p class="demo" >
+    <a href="id选择器.html" class="tt" >1</a>
+    <a href="id选择器.html" class="tt" id="a2">2</a>
+    <a href="2选择器.html" class="t1t" >3</a>
+    <a href="id选择器.html" class="tt" id="a4">4</a>
+    <a href="id选择器.html" class="tt" >5</a>
+</p>
+
+
+
+
+</body>
+</html>
