@@ -4,27 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-<!--  标签选择器，选择所有h1标签
-        -->
+
     <style>
-        h1{
-            color: cornsilk;
-            background: lawngreen;
-            border-radius: 24px;
+/*       类选择器的格式  .class的名称
+        优点：可以将多个不同标签归为同一个class,可以复用*/
+        .c1{
+            color: green;
         }
-        p{
-            color: red;
+        .c2{
+            color:blue;
+            font-size: 20px;
+        }
+        .p1{
+            color:red;
         }
     </style>
 </head>
 <body>
-
-<h1>hello</h1>
-<h1>hello2</h1>
-<p>hh</p>
-
-
-
-
+<h1 class="c1">hello</h1>
+<h1 class="c2">hello2</h1>
+<p class="c1">hh</p>
 </body>
 </html>

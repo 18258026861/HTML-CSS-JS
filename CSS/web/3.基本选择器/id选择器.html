@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-<!--  标签选择器，选择所有h1标签
-        -->
+
     <style>
+/*        id选择器的格式
+            #id名称
+            id不能复用，全局唯一*/
+        /*id选择器*/
+        #ih1{
+            color: cyan;
+        }
+
+        /*class选择器*/
+        .ch1{
+            color: #40e37c;
+            font-size: 20px;
+        }
+
+        /*h1标签选择器*/
         h1{
-            color: cornsilk;
-            background: lawngreen;
-            border-radius: 24px;
+            color: #ff5bf3;
         }
-        p{
-            color: red;
-        }
+    /*    事实证明：如果有重复属性，id选择器的优先级最高，class次之，标签最后*/
     </style>
 </head>
 <body>
 
-<h1>hello</h1>
-<h1>hello2</h1>
-<p>hh</p>
+<h1 id="ih1" class="ch1">hello</h1>
+<h1 id="h2" class="ch1">hello2</h1>
+<p class="ch1">hh</p>
 
 
 

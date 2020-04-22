@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+
+    <style>
+        body{
+            font-family: "Ping Hei";
+            font-weight: normal;
+        }
+        #title{
+            text-decoration: none;
+        }
+        /*悬浮的样式*/
+        #title:hover{
+            color: red;
+        }
+        /*激活的状态*/
+        #title:active{
+            font-size: 100px;
+            color: forestgreen;
+        }
+        /*阴影
+            水平偏移，垂直偏移*/
+        #money{
+            text-shadow:#ff5bf3 5px 5px ;
+        }
+
+    </style>
+
 </head>
 <body>
-$END$
+
+<p>
+    <img src="img/封面.jpg">
+</p>
+<a id="title" href="#">java核心卷1</a>
+<p id="money">$30</p>
+
 </body>
 </html>
