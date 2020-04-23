@@ -1,0 +1,42 @@
+#father{
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    margin:0;
+    border: 1px solid red;
+}
+a{
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid blue;
+    line-height: 100px;
+    text-align: center;
+    display: block;
+    position: relative;
+    background: hotpink;
+    color:white;
+}
+a:hover{
+    background: blue;
+}
+#s1{
+
+}
+#s3{
+    left:200px;
+    top:-100px;
+}
+#s5{
+    left: 100px;
+    top: -100px;
+}
+#s7{
+    top: -100px;
+}
+#s9{
+    left: 200px;
+    top: -200px;
+}
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*相对定位，根据父元素边框活着浏览器边框定位
+        */
+
+        #father{
+            border: 1px solid cornflowerblue;
+            height: 100px;
+            width: 100px;
+            /*父元素添加定位属性，子元素就根据父元素的边框定位*/
+            position: absolute;
+        }
+        #son1{
+            border:1px solid navajowhite;
+            margin: 5px;
+            padding: 5px;
+            height: 15px;
+            width: 50px;
+            line-height: 20px;
+            /*positon
+            relative 相对定位
+            absolute 绝对定位*/
+            position: absolute;
+            /*top距离上边框的距离
+            负数和0一样贴着边框*/
+            right: -5px;
+
+        }
+        #son2{
+            border: 1px solid gray;
+            margin: 5px;
+            padding: 5px;
+            height: 15px;
+            width: 50px;
+            line-height: 20px;
+        }
+        #son3{
+            border: 1px solid salmon;
+            margin: 5px;
+            padding: 5px;
+            height: 15px;
+            width: 50px;
+            line-height: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="father">
+    <div id="son1">s1</div>
+    <div id="son2">s2</div>
+    <div id="son3">s3</div>
+</div>
+
+</body>
+</html>

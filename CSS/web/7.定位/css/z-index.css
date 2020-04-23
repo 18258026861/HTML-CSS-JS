@@ -1,0 +1,32 @@
+div{
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    overflow: hidden;
+    border : 1px solid red;
+    position: absolute;
+    line-height: 15px;
+
+}
+ul li{
+    /*去掉小圆点*/
+    list-style: none;
+    position: relative;
+    top: -10px;
+    right: 30px;
+}
+#pic{
+    /*透明度 opacity*/
+    opacity: 0.7;
+    background: black;
+
+}
+#texr{
+    position: absolute;
+    top: 192px;
+    left: 10px;
+    color: #181617;
+    /*图层*/
+    z-index: 999;
+}
+

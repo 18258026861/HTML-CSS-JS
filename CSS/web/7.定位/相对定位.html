@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*相对定位，相对于自己原来的位置偏移
+        */
+
+        #father{
+            border: 1px solid cornflowerblue;
+            height: 100px;
+            width: 100px;
+        }
+        #son1{
+            border:1px solid navajowhite;
+            margin: 5px;
+            padding: 5px;
+            height: 15px;
+            width: 50px;
+            line-height: 20px;
+            /*positon
+            relative 相对定位
+            absolute 绝对定位*/
+            position: relative;
+            /*top距离上边-20px
+                buttom距离下边
+                left距离左边
+                right距离右边*/
+            top: -20px;
+
+        }
+        #son2{
+            border: 1px solid gray;
+            margin: 5px;
+            padding: 5px;
+            height: 15px;
+            width: 50px;
+            line-height: 20px;
+        }
+        #son3{
+            border: 1px solid salmon;
+            margin: 5px;
+            padding: 5px;
+            height: 15px;
+            width: 50px;
+            line-height: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="father">
+    <div id="son1">s1</div>
+    <div id="son2">s2</div>
+    <div id="son3">s3</div>
+</div>
+
+</body>
+</html>

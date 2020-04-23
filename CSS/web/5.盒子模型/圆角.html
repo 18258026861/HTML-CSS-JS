@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*当左右加起来是100px时变成了一个圆*/
+        div{
+            background:red;
+            width:100px;
+            height: 100px;
+            /*四个角都是50px*/
+            border-radius: 50px;
+            /*左上，右上，右下，左下顺时针,
+            两个值：第一个左上右下，第二个左下右上
+            四个值：相对应*/
+            border-radius: 20px 40px ;
+
+           /*半圆*/
+            border-radius: 50px 50px 0 0;
+            /*高等于半径*/
+            height:50px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+
+</div>
+
+</body>
+</html>

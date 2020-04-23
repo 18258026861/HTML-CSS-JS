@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*display:
+           block:变成块元素
+           inline 行内元素
+           inline-block：块元素，但是可以排成一行
+           none：消失
+            */
+    #son1{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        /*变成并排就需要两个都是行元素*/
+        display: inline-block;
+        float: left;
+    }
+       #son2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+
+            /*本来是行元素，现在变成了块元素*/
+            display: block;
+            display: inline-block;
+            /*浮动，上边对齐  左和右，向页面边框靠拢*/
+            float: left;
+
+        }
+        #son3{
+            /*clear消除浮动
+                right 右边
+                left 左边
+                both 两侧
+                那么就会另起一行*/
+            clear: both;
+        }
+        /*使用伪类在父类最后插入一个小的div*/
+        #father:after{
+            /*设置成块元素*/
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+<div id="son1"><img src="../4.美化网页/img/封面.jpg" alt=""></div>
+<span id="son2"><img src="../4.美化网页/img/arrow.png" alt=""></span>
+    <div id="son3"></div>
+    ssssssssssssssssssss
+</div>
+sssssssssssssssss
+</body>
+</html>
