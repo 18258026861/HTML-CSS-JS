@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script id="常量变量的定义">
+<!--    <script id="常量变量的定义">
         var c;
         console.log(c); //undifined
         // 不使用中间变量交换两个数值变量的值
@@ -150,7 +150,7 @@
         console.log(array);;            //Array(10) [ null, "name", 45, 4, 2, 2, 1, 1, 1, 1 ]
 
         /*join 打印拼接数组*/
-        array.join("--");       //"--name--45--4--2--2--1--1--1--1"
+        array.join("&#45;&#45;");       //"&#45;&#45;name&#45;&#45;45&#45;&#45;4&#45;&#45;2&#45;&#45;2&#45;&#45;1&#45;&#45;1&#45;&#45;1&#45;&#45;1"
     </script>
     <script id="对象">
         /*相当于java中的类，Person person = new Person("yzy",21,"man")*/
@@ -180,13 +180,37 @@
         /*判断对象本身是否有该属性*/
         person.hasOwnProperty('age');       //true
         person.hasOwnProperty('toString');  //false
-    </script>
+    </script>-->
     <script id="Map和Set">
         /*本来多个书籍应该这么写*/
         var name = ["yzy","yy","hc"];
         var score = [10,12,5];
         /*用Map*/
         var map = new Map([["yzy",10],["yy",12],["hc",5]])
+        var sc = map.get('yzy');
+        console.log(sc);   //10
+/*      动态新增数据*/
+        map.set('ss',100);      //  Map(4) { yzy → 10, yy → 12, hc → 5, ss → 100 }
+        /*删除数据*/
+        map.delete("ss");       // Map(3) { yzy → 10, yy → 12, hc → 5 }
+
+        /*set*/
+        var set = new Set([3,1,2,5,3,2,1])
+        /*发现多余的数值都不显示*/
+        console.log(set);       //Set(4) [ 3, 1, 2, 5 ]
+
+        set.add(7);              //Set(5) [ 3, 1, 2, 5, 7 ]
+        /*判断是否有该元素*/
+        set.has(1);         //true
+
+/*      遍历Map集合中的键值对*/
+        for(var x of map){
+            console.log(x)              //Array [ "yzy", 10 ]       Array [ "yy", 12 ]      Array [ "hc", 5 ]
+        }
+        /*遍历Set集合中的元素*/
+        for(var y of set){
+            console.log(y);             //3,1,2,5,7
+        }
 
     </script>
 </head>
