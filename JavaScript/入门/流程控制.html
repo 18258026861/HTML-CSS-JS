@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var tt = 10;
+    if(tt>1){
+        console.log(1);             //1
+    }
+
+   var array = [1,2,3,4,2,3];
+    //第一种方法，写函数
+    array.forEach(function (value) {
+        console.log(value);
+    })
+//    第二种方法,遍历下标
+    for (var number in array){
+        console.log(array[number]);
+    }
+</script>
+
+</body>
+</html>

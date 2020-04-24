@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script id="常量变量的定义">
+        var c;
+        console.log(c); //undifined
+        // 不使用中间变量交换两个数值变量的值
+        // var num1 = 6;
+        // var num2 = 8;
+        // num1 = num1+num2;   //6+8=14
+        // num2 = num1-num2;   //14-6=8
+        // num1 = num1-num2;   //14-8=6
+
+
+        //常量需要使用const定义，不可改变,必须有初始值,命名最好是用大写和下划线
+        const PI = 3.14;
+        console.log(PI);
+
+        // 常量和变量的区别：常量必须有初值，切不可被改变
+        //                 变量可以没有初值且可以被改变
+        //
+        // 常量和字面量的区别：均不会被改变，常量为储存数值的容器，字面量为数值；
+    </script>
+    <script id="数据类型number">
+        //typeof 用来查看是什么数据类型
+        console.log(typeof 100);
+        var name = "尹振宇";
+        console.log(typeof name);
+
+        // number最大值Number.MAX_VALUE
+        console.log(Number.MAX_VALUE);  //1.7976931348623157e+308
+        //       最小值Number.MIN_VALUE
+        console.log(Number.MIN_VALUE);  //5e-324
+        //       无穷大 Infinity  Number.MAX_VALUE + Number.MIN_VALUE
+        console.log(typeof Infinity);   //number
+        //       无穷小 -Infinity
+        console.log(typeof -Infinity);  //number
+
+        //NaN非法数字Not A Number
+        var num = NaN;
+        console.log(typeof NaN);//number
+
+        //浮点数运算可能失去精度
+
+    </script>
+    <script id="数据类型string">
+        //字符串可以使用是单引号或和双引号
+        var name = 'yzy';
+        var name1 = "yzy";
+        //相同引号不能嵌套，不同引号可以嵌套
+        var name2 = "yzy's'";
+        console.log(typeof name2);
+        console.log(name2);
+        //给变量加上引号，那么变量会变成一个字面量
+        console.log('name');
+        alert('name');
+        /*可以使用``进行多行编写*/
+        var string = `name
+        ss
+        asfda`;
+
+        /*模板字符串*/
+        var mb = `name,${name}`;
+        console.log(mb);  //name,yzy
+
+        /*大小写转化，这个是方法不是属性*/
+        mb.toUpperCase();  //"NAME,YZY"
+
+        /*索引某个字母的下标indexof*/
+        mb.indexOf("m");    //2
+
+        /*截取，包含前面不包含后面*/
+        mb.substring(2,5);  //"me,"
+    </script>
+    <script id="数据类型boolean">
+        var bool1 = true;
+        var bool2 = false;
+        console.log(bool1);
+        console.log(typeof bool1);
+        //任何非零数值都是true，只有0和NaN是false
+        var bool3 = Boolean(0);
+        var bool4 = Boolean(Number.MAX_VALUE);
+        console.log(bool3);//false
+        console.log(bool4);//true
+        //任何非空字符串都是true，只有空字符串是false
+        var bool5 = Boolean('sdasdas');
+        var bool6 = Boolean('');
+            console.log(bool5);     //true
+            console.log(bool6);     //false
+        //任何对象都是true，只有null和undefined是false
+        var bool7 = Boolean(null);
+        var bool8 = Boolean(undefined);
+        console.log(bool7);         //false
+        console.log(bool8);         //false
+    </script>
+    <script id="数据类型Undefined和null">
+        //Undefined表示变量未赋值，这种类型只有一种值就是undefined
+
+        //undefined是Undefined类型的字面量，typeof对没有初始化和没有生命的变量都会返回undefined
+        var ll;
+        console.log(typeof ll);        //undefined
+        var k = undefined;
+        console.log(typeof k);          //undefined
+        //nul表示的是一个空的对象，所以yongtypeof会返回Object
+        var jj = null;
+        console.log(typeof jj);
+    </script>
+    <script id="数组">
+
+        var array = [1,2,45,"name",null];
+        console.log(array)     //Array(4) [ 1, 2, 45, "name" ]
+ /*     计数从0开始*/
+        array[1];  //2
+        //如果越界，结果为undefined
+        array[5];   //undefined
+
+/*      数组的长度可以改变，给length赋值*/
+        //长度边长，多余的下标为empty，类型为undifined
+        array.length = 10;
+        console.log(array);   // Array(10) [ 1, 2, 45, "name", null, <5 empty slots> ]
+
+    //    长度变短，会被截取，类型也为undifined
+        array.length = 2;
+        console.log(array);   //Array [ 1, 2 ]
+
+/*      indexof,通过元素找到他的下标*/
+        array.indexOf(null);   //4
+
+        /*slice()*/
+        array.slice(2,4);  //Array [ 45, "name" ]
+
+        /*push 和 pop尾部压入和弹出*/
+        array.push(1,1,1);   //Array(8) [ 1, 2, 45, "name", null, 1, 1, 1 ]
+        array.pop();         //[ 1, 2, 45, "name", null, 1, 1 ]
+
+        /*unshift和shift 头部压入和弹出*/
+        array.unshift("a",4);    //Array(11) [ "a", 4, 1, 2, 45, "name", null, 1, 1, 1, … ]
+        array.shift();           //Array(11) [  4, 1, 2, 45, "name", null, 1, 1, 1, … ]
+
+        /*sort 排序*/
+        Array.sort();           //Array(10) [ 1, 1, 1, 1, 2, 2, 4, 45, "name", null ]
+
+        /*reverse 反转*/
+        array.reverse();        //Array(10) [ null, "name", 45, 4, 2, 2, 1, 1, 1, 1 ]
+
+        /*concat 添加生成新数组，原数组保持不变*/
+        array.concat(1,2);          // Array(12) [ null, "name", 45, 4, 2, 2, 1, 1, 1, 1, 1 , 2 ]
+        console.log(array);;            //Array(10) [ null, "name", 45, 4, 2, 2, 1, 1, 1, 1 ]
+
+        /*join 打印拼接数组*/
+        array.join("--");       //"--name--45--4--2--2--1--1--1--1"
+    </script>
+    <script id="对象">
+        /*相当于java中的类，Person person = new Person("yzy",21,"man")*/
+        var person = {
+            name:"yzy",
+            age:21,
+            sex:"man"
+        };
+        console.log(person.name);   //yzy
+
+        /*对象的属性可以赋值*/
+        person.age;      //21
+        person.age = 22;
+        person.age;     //22
+
+        /*动态删减属性*/
+        person.hh = "hh";
+        person;         //Object { name: "yzy", age: 22, sex: "man", hh: "hh" }
+        delete person.hh
+        person          //Object { name: "yzy", age: 22, sex: "man" }
+
+        /*判断是否有该属性,属性名是字符串，要加上引号（单双都行）*/
+        'age' in person;;       //true
+        /*这个对象没有，但是他父类__proto__有*/
+        'toString' in person;       // true
+
+        /*判断对象本身是否有该属性*/
+        person.hasOwnProperty('age');       //true
+        person.hasOwnProperty('toString');  //false
+    </script>
+    <script id="Map和Set">
+        /*本来多个书籍应该这么写*/
+        var name = ["yzy","yy","hc"];
+        var score = [10,12,5];
+        /*用Map*/
+        var map = new Map([["yzy",10],["yy",12],["hc",5]])
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

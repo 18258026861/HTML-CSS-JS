@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script id="toString" type="text/html">
+        //常规使用
+        var num1 = 123;
+        var str1 = num1.toString();
+        console.log(str1);//123
+        console.log(typeof str1);//string
+
+        var bool1 = false;
+        var str2 = bool1.toString();
+        console.log(str2);//false
+        console.log(typeof str2);//string
+
+        //不会影响原变量，只会将转化的结果返回
+        //可以携带一个参数，输出对应进制的值
+        var num2 = 123;
+        var str3 = num2.toString(2);
+        console.log(str3);  //1111011
+        //null和undefined没有toString方法，可以直接转成字符串
+        var n1 = null;
+        var s1 = String(n1);
+        console.log(typeof s1); //string
+        console.log(typeof n1); //object
+
+        //凭借字符串：任何数值和+""连接到一起都会转化成字符串
+        var n2 = 101;
+        var s2 = n2 + 'str';
+        console.log(typeof s2); //string
+        console.log(s2);    //101str
+        var n3 =null;
+        var s3 = n3+'';
+        console.log(typeof s3); //string
+        console.log(s3);   // null
+
+    </script>
+    <script id="字符串转数字" type="text/html">
+        //如果是纯数字的字符串，直接转换成数字
+        var str21 = '1011';
+        var num21 = Number(str21);
+        console.log(num21);     //1011
+        console.log(typeof num21);      //number
+
+        //如果字符串为空，则转换为0
+        var str22 = '';
+        var num22 = Number(str22);
+        console.log(num22);     //0
+        console.log(typeof num22);  //number
+
+        //如果字符串中有非数字的内容，则转换成NaN
+        var str23 = 'yzy101';
+        var num23 = Number(str23);
+        console.log(num23);     //NaN
+        console.log(typeof num23);      //number
+
+        //parseInt(),parseFloat()可以提取字符串中的有效整数和浮点数,从第一位有效数字开始直到遇到无效数字
+        //如果第一位不是有效数字，则直接返回NaN
+        var str24 = 'yzy101';
+        var str25 = '100yy1';
+        var str26 = '10.6s';
+        var num24 = parseInt(str24);
+        var num25 = parseInt(str25);
+        var num26 = parseInt(str26);
+        console.log(num24);     //NaN
+        console.log(num25);     //100
+        console.log(num26);     //10
+    </script>
+    <script id="布尔转数字" type="text/html">
+        //true转1，false转0
+        var bool31 = true;
+        var bool32 = false;
+        var num32 =  Number(bool32);
+        var num31 = Number(bool31);
+        console.log(num31);     //1
+        console.log(num32);     //0
+        console.log(typeof num31);      //number
+    </script>
+    <script id="null转数字"type="text/html">
+        //null转数字为0
+        var n41 = null;
+        var num41 = Number(n41);
+        console.log(num41);     //0
+        console.log(typeof num41);      //number
+
+        //undefined转数字为NaN
+        var u41;
+        var num42 = Number(u41);
+        console.log(num42);     //NaN
+        console.log(typeof num42);//number
+    </script>
+    <script id="+和-0运算符"type="text/html">
+        var str51 = '122';
+        var num51 = +str51;
+        console.log(typeof num51);  //number
+        console.log(num51);     //121
+    </script>
+    <script id="转成布尔类型"type="text/html">
+        //boolean(): 0,''(空字符),null undefined NaN 会转化成false，其他为true
+        console.log(Boolean(0));   //false
+        console.log(Boolean(''));       //false
+        console.log(Boolean(null));     //false
+        console.log(Boolean(undefined));        //false
+        console.log(Boolean(NaN));      //false
+        console.log(Boolean(111));      //true
+    </script>
+    <script id="例子">
+        //例子1-----------------------------------------------
+        var str = false + 1; //false = 0
+        console.log(str);//1
+        var demo = false == 1;//判断false和1是否相等
+        console.log(demo);//false
+        if(typeof(a)&&-true + (+undefined) + ''){ //a没有定义，类型为undefined,-true=-1,+undefined=NaN,拼接字符串,都为true
+            console.log('基础扎实');
+        }
+        if(11 + '11' *2 == 33) {//乘法左右都要转化成字符串
+            console.log('基础扎实');
+        }
+        !!" " + !!"" - !!false || console.log('你觉得能打印你就是菜');
+        //!!双非，boolean类型，空格字符串为true，空字符串为false，true+false-flase=1
+        // 例子2-----------------------------------------------
+        (window.foo || (window.foo = 'bar'));
+        //window.foo = 'bar'
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
