@@ -2,9 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+
+<script>
+    /*如果在函数体内定义的变量，在外面是不可以使用的*/
+    function f() {
+        var x = 1;
+    }
+/*
+    console.log(x);         //报错：ReferenceError: x is not defined
+*/
+
+    /*两个函数内的变量互不相干，可以同名
+    *   f1函数也可以使用x变量*/
+    function f1() {
+        var x = 2;
+    }
+
+    /*那么嵌套函数可以使用吗*/
+    function f2() {
+        var x = 1;
+        function f3() {
+            /*内部可以访问外部变量，外部不可以访问*/
+            var y = x;
+
+            var x = 2;
+            console.log(y);
+            /*如果内部类有相同变量，就会优先找该变量,找不到才会去外部变量寻找*/
+            console.log(x);
+        }
+    }
+
+    /*提升作用域*/
+    function f3() {
+        var x = y;
+        console.log(x);         //显示的是undefined，意思是有y这个变量，但是没有赋值，即var y;
+        /*y定义在x的后面，  为什么不报错呢，
+        原因是var y = 10 可以分成两步 1。 var y;
+                                    2. y = 10;同理，
+                                    var x = y ，也是两步 ，JS自动提升变量声明， 把var y提升到了x = y 的前面，所以有了undefined */
+        var y = 10;
+    }
+    /*代码改进,定义放最开头*/
+    function f4() {
+        var x,y;
+        y = 10;
+        x = y;
+    }
+
+    /*局部作用域冲突*/
+    function f5() {
+        for(var i = 0;i<2;i++){
+
+        }
+        console.log(i);     //2 ,发现i可以再其他地方被输出，但是我不想，就可以用let
+    }
+
+    /*使用let解决局部作用域冲突,let只在本作用域下有效*/
+    function f6() {
+        for(let i=0;i<2;i++){
+
+        }
+        console.log(i);     //ReferenceError: i is not defined
+    }
+
+
+
+
+
+
+
+</script>
+
+
+
 </body>
 </html>

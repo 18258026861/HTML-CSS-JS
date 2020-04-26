@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+
+    <script>
+
+        /*类*/
+        var person = {
+            name : "yzy",
+            run : function () {
+                console.log(this.name + "run");
+            }
+        };
+
+        /*对象*/
+        var YY = {
+            name : "YY",
+            //如果我想实现person类的run方法，该怎么办呢
+            };
+
+
+        // YY.run();       //SyntaxError: expected expression, got '}'
+
+        /*使对象的原型是person
+        *   把YY的原型指向了person*/
+        YY.__proto__ = person;
+
+        YY.run();       //YYrun   继承了之后就可以调用父类方法
+    //    在YY中的prototype里发现了person的属性和方法，即想在YY的prototype是person
+
+    </script>
+
 </head>
 <body>
-$END$
+
 </body>
 </html>

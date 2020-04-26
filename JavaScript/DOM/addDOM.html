@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<dl id="father">
+    <dt id="java">
+        Java
+    </dt>
+    <dd id="se">
+        JavaSe
+    </dd>
+    <dd id="ee">
+        JavaEE
+    </dd>
+</dl>
+
+<dd id="sp">Spring</dd>
+
+<script>
+
+    let ee = document.getElementById("ee");
+    let father = document.getElementById("father");
+    let sp = document.getElementById("sp");
+    //追加一个节点，放到最后
+    father.append(sp);
+
+
+    /*创造一个新节点*/
+    //创造一个p普通节点，dd标签
+    let web = document.createElement("dd");
+    //设置标签的属性值，一些常用的属性可以直接赋值，比如web.id = "web";
+    web.setAttribute("id","web");
+    web.innerText = "JavaWeb";
+    father.append(web);
+
+//    创造一个script标签
+    let script = document.createElement("script");
+    script.setAttribute("type","text/html");
+    father.append(script);
+
+    /*insert插入任意位置*/
+    //  父节点的方法insertBefore(插入的新节点,目标节点)：在目标节点之前插入新节点
+    father.insertBefore(sp,ee);
+
+
+
+</script>
+</body>
+</html>

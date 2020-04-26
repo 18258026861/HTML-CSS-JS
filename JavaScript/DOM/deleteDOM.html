@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="father">
+    <p id="p">p1节点</p>
+    <h1 id="h1">h1节点</h1>
+    <span id="span">span节点</span>
+</div>
+
+
+
+
+
+<script>
+
+    /*自己删除自己*/
+    let h1 = document.getElementById("h1");
+    h1.remove();
+
+
+    /*通过父节点删除子节点*/
+    /*第一种写法*/
+    let father = document.getElementById("father");
+    let p = document.getElementById("p");
+    //这个是通过找到子节点，所以需要先获取子节点
+    // father.removeChild("p");               //这个写法错了，先要获取子节点
+    father.removeChild(p);
+
+
+    /*第二种写法*/
+    let p1 = document.getElementById("p");
+    // 通过该节点找到其父节点
+    let father1 = p1.parentElement;
+    father1.removeChild(p1);
+
+    /*通过父节点的第几个子节点来删除节点*/
+    father.removeChild(father.children[0]);
+    father.removeChild(father.children[1]);
+    father.removeChild(father.children[2]);         //执行这句就会报错，因为动态更新，执行完第一句，就只剩下两个节点，就越界了
+//    所以如果想按顺序删除，可以都使用删除第一个节点，不要像上面这么写
+    father.removeChild(father.children[0]);
+    father.removeChild(father.children[0]);
+    father.removeChild(father.children[0]);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

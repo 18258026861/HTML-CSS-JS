@@ -3,6 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script>
+
+
+    /*  对象有两个东西，属性和方法*/
+       /* var person = {
+            name : "yzy",
+            birth : 1998,
+            age : function () {
+                /!*获取当前年份*!/
+                var now = new Date().getFullYear();
+                return now - this.birth;
+            }
+        };
+        //方法需要带（）
+        console.log(person.age());      // 22*/
+
+    function getAge() {
+        /*获取当前年份*/
+        var now = new Date().getFullYear();
+        return now - this.birth;
+    }
+    var person2 = {
+        name : "yzy",
+        birth : 1998,
+        /*这里不能加括号，因为加括号是直接执行方法，而你需要读取this.birth这个属性，所以要指向函数指针*/
+        age : getAge
+    };
+
+    //调用对象的方法需要带括号，否则指向的是函数名指针
+    console.log(person2.age());      //22
+    console.log(getAge());           //NaN
+
+        //函数名是指针，如果不带括号代表执行这个指针，那么就是寻找他，会显示函数的信息
+        //加括号代表直接执行花括号里的代码
+
+
+        /*这两个差别是什么，person.age()这个方法是person在调用，所以this读取的就是person里的birth
+        *                   而getAge()是全局在调用，而全局没有这个属性，this读取不到，所以为NaN
+        *       由此可得，this 被谁调用，就读取谁的属性*/
+
+        /*使用apply指向你想要获取属性的对象，第二个是参数，可以填空*/
+        console.log(getAge.apply(person2, []));                 //22
+        // 在使用apply时函数也不能加括号，否则会立刻执行
+
+    </script>
+
 </head>
 <body>
 

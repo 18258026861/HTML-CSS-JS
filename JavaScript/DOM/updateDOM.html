@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="id1"></div>
+
+<script>
+    let id1 = document.getElementById("id1");
+    //修改节点的文本值
+    id1.innerText="YY";
+    //在节点内加入HTML内容
+    id1.innerHTML="<span> 修改节点的HTML结构 </span>";
+    //相当于CSS的写法,但是不支持-，所以用驼峰命名法
+    id1.style.color = "blue";
+    id1.style.fontSize = "larger";
+    id1.style.padding = "10px"
+
+
+</script>
+
+</body>
+</html>

@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<script>
+    /*定义函数方式1*/
+    function f1(x) {
+        if(x>=5){
+            console.log("x大于等于5");
+        }else
+            console.log("x小于5");
+    }
+    /*f1(6);       //x大于等于5
+    f1(7,2);       //x大于5，输入多个参数会判断第一个
+    f1();       // 不输入参数会判断else*/
+
+    /*定义函数方式2*/
+    var f2 = function(x){
+        /*可以手动抛出异常*/
+        if(typeof x!=="number"){
+            throw "not a number";
+        }
+        if(x>=5){
+            console.log("x大于等于5");
+        }else
+            console.log("x小于5");
+    }
+   /* f2(4);          //x小于5
+    f2("yzy");*/
+
+    var f3 = function (x) {
+        /* arguments :传入参数形成的数组
+        *   比如我传入很多参数，但是我接收的知识第一个参数，而arguements接收的就是全部参数形成的数组*/
+        console.log(x);
+        for(i = 0;i < arguments.length; i++){
+            console.log(arguments[i]);
+        }
+    }
+
+    /*输入多个参数*/
+   /* f3(2,5,4,7,8);       //实际接收的数是x=2，arguements的数组是2，5，4，7，8*/
+
+    /*rest,相当于java的可变参数*/
+    var f4 = function (x,...rest) {
+        console.log(x);
+        console.log(rest);
+    }
+    f4(1,5,7,3);            //x = 1    rest = Array(3) [ 5, 7, 3 ]
+
+</script>
+
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="p">p1节点</p>
+<h1 id="h1">h1节点</h1>
+<span id="span">span节点</span>
+
+<div id="div">
+    <h2 class="div">h2</h2>
+    <h3 class="div">h2</h3>
+</div>
+<p id="p2">p2节点</p>
+
+<script>
+    let h1 = document.getElementById("h1");
+    let span = document.getElementById("span");
+    let p = document.getElementById("p");
+
+/*      获取父节点*/
+    let div = document.getElementById("div");
+    /*父节点的子节点的数量*/
+    div.childElementCount;          //2
+
+    /*父节点的第一个，最后一个节点*/
+    div.firstChild;
+    div.lastChild;
+    //获取父节点下子节点
+    div.children;                 /*0: <h2 class="div">​
+                                    1: <h3 class="div">
+                                    length: 2*/
+    //子节点的上下一个节点
+    span.lastChild;
+    span.nextElementSibling;
+
+    /*通过标签获得collection*/
+    let ps = document.getElementsByTagName("p");
+    //获取第一个节点
+    let p1 = ps[0];
+    let p2 = ps[1];
+
+
+</script>
+</body>
+</html>

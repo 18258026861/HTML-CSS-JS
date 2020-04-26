@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+
+    <script>
+
+        var person = {
+            name:"yzy",
+            age:21,
+            sex:"man"
+        };
+        console.log(person);   //Object { name: "yzy", age: 21, sex: "man" }
+
+        /* 将对象转化为JSON*/
+        let JSONPerson = JSON.stringify(person);
+        console.log(JSONPerson);            //{"name":"yzy","age":21,"sex":"man"}
+
+        /*将JSON转化为JavaScript对应类型*/
+        let parse = JSON.parse(JSONPerson);
+        // 里面和外面不能都是双引号或单引号
+        let parse2 = JSON.parse('{"name":"yzy","age":21,"sex":"man"}');
+        console.log(parse);             //  Object { name: "yzy", age: 21, sex: "man" }
+        console.log(parse2);            //  Object { name: "yzy", age: 21, sex: "man" },两者效果一样
+
+
+    </script>
+
 </head>
 <body>
-$END$
+
 </body>
 </html>

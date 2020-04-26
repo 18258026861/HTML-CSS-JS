@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    MD5加密-->
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.13.0/js/md5.js"></script>
+</head>
+<body>
+
+<form action="#" method="post">
+    <p>
+    用户名:<input type="text" id="username" name="username">
+    </p>
+    <p>
+        密码：<input type="password" id="password" name="password">
+    </p>
+    性别：
+    <input type="radio" name="sex" value="man" >男
+
+    <input type="radio" name="sex" value="women" checked>女
+
+    <br>
+    <button type="submit" onclick="ss()">提交</button>
+</form>
+
+<script>
+    let username = document.getElementById("username");
+    //获取输入的值，可以赋值
+    username.value;
+    let password = document.getElementById("password");
+
+
+    //    对于单选框多选框，不能获取到用户输入的值，只能通过判断checked是否选中来操作
+    let input = document.getElementsByTagName("input");
+    let boy = input[1];
+    //判断该选线是否被选中
+    boy.checked;
+
+    /*提交表单*/
+    function ss() {
+        //当点击时，会输出账号和密码，但是这个值是公开的，怎么让他加密
+        /*console.log(username.value);
+        console.log(password.value);*/
+
+        //通过md5加密
+        password.value = md5(password.value);
+        console.log(password.value);
+
+    }
+
+</script>
+
+</body>
+</html>

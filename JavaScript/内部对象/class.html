@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        /*ES6引入的class关键字
+        *   定义一个类，拥有属性和方法
+        *       - 属性通过构造器注入
+        *       */
+        class student{
+            constructor(name) {
+                this.name = name;
+            }
+            run(){
+                return this.name+"run";
+        }
+        }
+        /*要是用就要创建类的实例--对象*/
+        var YY = new student("YY");
+        //和java一样，可以构造器注入，也可以属性赋值
+        YY.name = "YZY";
+        console.log(YY.run());                  //YZYrun
+
+        /*继承*/
+
+        class primaryStudent extends student{
+            constructor(name,schoolName) {
+                super(name);
+                this.schoolName = schoolName;
+            }
+            run() {
+                return super.run()+this.schoolName;
+            }
+
+        }
+
+        var p = new primaryStudent("YY","秋瑾");
+        console.log(p.run());           // YYrun秋瑾
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
